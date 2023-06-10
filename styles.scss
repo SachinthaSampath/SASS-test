@@ -1,0 +1,108 @@
+// regular css
+// .button.danger{
+//     color:red;
+//     border:1px solid red;
+// }
+
+// .button.warning{
+//     color:yello;
+//     border:1px solid yellow;
+// }
+
+// .button.success{
+//     color:green;
+//     border:1px solid green;
+// }
+
+// use variables
+$btn-border-width-style: 1px solid;
+.button.danger {
+  color: red;
+  border: $btn-border-width-style red;
+}
+
+.button.warning {
+  color: yello;
+  border: $btn-border-width-style yellow;
+}
+
+.button.success {
+  color: green;
+  border: $btn-border-width-style green;
+}
+//native css variables
+:root {
+  --red: hsl(0, 100%, 50%);
+}
+.header a {
+  color: var(--red);
+}
+
+//nesting
+header {
+  h2 {
+    color: dodgerblue;
+    padding: 10px;
+  }
+  p {
+    color: green;
+  }
+}
+
+//apply to direct siblings (& refer to the parent selector)
+.button {
+  &:focus {
+    background: green;
+  }
+  &:hover {
+    background: yellow;
+  }
+  &:active {
+    background: lightblue;
+  }
+}
+
+//mixins (similar styles in multiple classes)
+
+@mixin align-div-content-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.form-group-left {
+  @include align-div-content-right();
+}
+
+//mixins with parameters
+@mixin cool-button($color, $bg) {
+  display: flex;
+  color: $color;
+  background: $bg;
+}
+.btn-orange {
+  @include cool-button(black, orange);
+}
+
+//other important mixins
+@mixin theme-color($theme) {
+  @if $theme == "light" {
+    background-color: "lightblue";
+  } @else {
+    background-color: "lightgreen";
+  }
+}
+
+$sizes: 40px, 50px, 80px;
+@each $size in $sizes {
+  .icon-#{$size} {
+    font-size: $size;
+  }
+}
+
+//sass functions
+@function sum($numbers) {
+  $sum: 0;
+  @each $number in $numbers {
+    $sum: $sum + $number;
+  }
+  @return $sum;
+}

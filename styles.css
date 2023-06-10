@@ -1,0 +1,65 @@
+.button.danger {
+  color: red;
+  border: 1px solid red;
+}
+
+.button.warning {
+  color: yello;
+  border: 1px solid yellow;
+}
+
+.button.success {
+  color: green;
+  border: 1px solid green;
+}
+
+:root {
+  --red: hsl(0, 100%, 50%);
+}
+
+.header a {
+  color: var(--red);
+}
+
+header h2 {
+  color: dodgerblue;
+  padding: 10px;
+}
+header p {
+  color: green;
+}
+
+.button:focus {
+  background: green;
+}
+.button:hover {
+  background: yellow;
+}
+.button:active {
+  background: lightblue;
+}
+
+.form-group-left {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-orange {
+  display: flex;
+  color: black;
+  background: orange;
+}
+
+.icon-40px {
+  font-size: 40px;
+}
+
+.icon-50px {
+  font-size: 50px;
+}
+
+.icon-80px {
+  font-size: 80px;
+}
+
+/*# sourceMappingURL=styles.css.map */
