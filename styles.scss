@@ -106,3 +106,32 @@ $sizes: 40px, 50px, 80px;
   }
   @return $sum;
 }
+
+
+
+
+
+
+// Example usage
+
+
+
+@mixin test-color($color) {
+  @if lightness($color) > 30% {
+    background-color: black;
+  } @else {
+    background-color: white;
+  }
+}
+
+
+
+$myColor: #336699;
+$lightnessValue: lightness($myColor); // Extracting lightness value
+
+.some-element {
+  // background-color: $myColor;
+  // color: if(lightness($myColor) > 30%, #000000, #ffffff);
+  @include test-color($myColor)
+}
+
